@@ -1,0 +1,71 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="core" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath }/css/bootstrap5.min.css">
+<script src="${pageContext.request.contextPath }/js/bootstrap5.bundle.min.js"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath }/css/bootstrapicons.css">
+<style>
+    body {
+        background-color: rgba(6, 115, 151, 0.7);
+    }
+</style>
+</head>
+
+    <body>
+        <div class="container">
+            <div class="card border border-3 shadow-lg mx-auto mt-5" style="width: 25rem;">
+            <core:if test="${ !empty message  }">
+                <p class="alert alert-danger">${message }</p>
+            </core:if>
+            <core:if test="${ !empty messageSuccess  }">
+                <p class="alert alert-success">${messageSuccess }</p>
+            </core:if>
+    
+                <div class="p-2 d-flex justify-content-center">
+    
+                    <img src="https://vi.seaicons.com/wp-content/uploads/2016/08/Users-User-Male-2-icon-1.png"
+                        class="card-img-top w-25 opacity-25 bg-info rounded-circle" alt="user">
+    
+                </div>
+                <div class="card-body pt-2">
+                    <form action="${pageContext.request.contextPath }/change-password" method="post">
+                        <h5 class="card-title text-center">Thay đổi mật khẩu</h5>
+                        <div class="row mx-0 mb-3">
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Mật khẩu cũ</label>
+                                <div class="input-group mb-3">
+                                    <i class="bi bi-person-check-fill input-group-text"></i>
+                                    <input type="password" class="form-control shadow-none" placeholder="Mật khẩu cũ"
+                                        name="oldPassword">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Mật khẩu mới</label>
+                                <div class="input-group mb-3">
+                                    <i class="bi bi-lock-fill input-group-text"></i>
+                                    <input type="password" class="form-control shadow-none" placeholder="Mật khẩu mới"
+                                        name="newPassword">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Xác nhận mật khẩu mới</label>
+                                <div class="input-group mb-3">
+                                    <i class="bi bi-lock-fill input-group-text"></i>
+                                    <input type="password" class="form-control shadow-none" placeholder="Xác nhận mật khẩu"
+                                        name="rePassword">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary px-1">Đổi mật khẩu</button>
+                            <a href="${pageContext.request.contextPath }/home" class="pt-3 text-decoration-none text-center">Về trang chủ</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    
+        </div>
+    </body>
+</html>
